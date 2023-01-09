@@ -1,10 +1,14 @@
 namespace RecipeApp.Entity
 {
-    public class Recipe
+    public class RecipeItem
     {
-        public string Id { get => Id; set => Id = value; }
-        public string Name { get => Name; set => Name = value; }
-        public string Ingredients { get => Ingredients; set => Ingredients = value; }
-        public string Instructions { get => Instructions; set => Instructions = value; }
+        private string id;
+        public string Id { get => id; set => id = value; }
+        private string name;
+        public string Name { get => name; set => name = value; }
+        private string ingredients;
+        public string Ingredients { get => ingredients; set => ingredients = value; }
+        private string instructions;
+        public string Instructions { get => instructions; set => instructions = value; }
     }
 }

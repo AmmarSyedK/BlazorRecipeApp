@@ -1,3 +1,63 @@
 ﻿@page "/add-recipe"
 
 <h1>Add Recipe</h1>
+
+<div class="row">
+    <div class="col-4">
+        <form action="row row-cold-lg-auto g_3 align-items-center">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Recipe name</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Lasagna" @bind="recipeTitle">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeIngredients"></textarea>
+            </div>
+        
+            <div class="form-group">
+              <label for="durationInput">Duration (minutes):</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button type="button" class="btn btn-primary" @onclick="DecreaseDuration">-</button>
+                </div>
+                <input type="number" class="form-control" min="0" step="15" @bind="duration" />
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-primary" @onclick="IncreaseDuration">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-4"></div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit" @onclick="AddRecipe">Add the recipe</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+@code {
+    private int duration { get; set; }
+    private void DecreaseDuration(){
+        duration = Math.Max(duration - 15, 0);
+    }
+    private void IncreaseDuration(){
+        duration += 15;
+    }
+    private List<RecipeItem> recipes = new();
+    private string recipeTitle;
+    private string recipeIngredients;
+
+    private void AddRecipe(){
+        if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients)){
+            recipes.Add(new RecipeItem
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = recipeTitle,
+                Ingredients = recipeIngredients
+            });
+        }
+    }
+
+}
