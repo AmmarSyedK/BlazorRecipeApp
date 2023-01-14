@@ -1,3 +1,5 @@
+using Blazored.LocalStorage;
+
 namespace RecipeApp.Entity
 {
     public class RecipeItem
@@ -10,5 +12,17 @@ namespace RecipeApp.Entity
         public string Ingredients { get => ingredients; set => ingredients = value; }
         private string instructions;
         public string Instructions { get => instructions; set => instructions = value; }
+
+        private int duration;
+        public int Duration { get => duration; set => duration = value; }
+        private const string localStorageKey = "recipeapp";
+        private ILocalStorageService localStorage { get; set; }
+        
+        public async Task<List<RecipeItem>> GetRecipeAsync()
+        {
+            return await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
+        } 
     }
+
+    
 }

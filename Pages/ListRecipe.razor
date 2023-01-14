@@ -1,9 +1,32 @@
 ﻿@page "/list-recipe"
 
+
 <PageTitle>List of Recipes</PageTitle>
 
 <h1>List of Recipes </h1>
 
+<u1 class="list-group mb-5">
+                @foreach (var recipe in recipes)
+                {
+                    <p>@recipe.Name</p>
+                    <p>@recipe.Ingredients</p>
+                    <p>@recipe.Duration</p>
+                }
+            </u1>
+
 @code {
     private List<RecipeItem> recipes = new();
+    public List<RecipeItem> RecipeItems { get; set; } = new List<RecipeItem>();
+
+    protected override async Task OnInitializedAsync(){
+        var data = await GetRecipeAsync();
+
+        if (data != null){
+            recipes = data;
+        }
+    }
+
+    
+    
+        
 }

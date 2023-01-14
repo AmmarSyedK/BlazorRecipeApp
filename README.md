@@ -22,3 +22,6 @@ On 8 January 2023, the following progress was made on the recipe app:
 On 9 January 2023, further development was completed on the "add recipe" page, which now includes a form with fields for the name of the recipe, ingredients, and time needed to complete the recipe, as well as an "add recipe" button. A screenshot of this page can be seen below:
 
 ![Day 2](https://gcdnb.pbrd.co/images/Aa3bIHECpNRV.png?o=1)
+
+On 14 January 2023, the data is now stored in the LocalStorage. When submitting the recipe, the data is stored in an array.
+So when we refresh the page, the data will be visible. The data are no longer volatile.

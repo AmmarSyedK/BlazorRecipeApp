@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wM1GMXoSRQHrjrnjmi44Us4oyoxpF9bjgS3Eo7hz3LFHHbDrLkoM/d+A1xeyKSFg/FYu14pzzkWPjlF5NJQ/vA==",
+  "dgSpecHash": "qnT3w42zeG55Vefg3upoTTgapgBFTBuCyMl/hIc1SpLGtRQLyP9GbfChRy2zpaM4/rLo8Aeet3p8pXynbucp6g==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\RecipeApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\am954\\.nuget\\packages\\blazored.localstorage\\4.3.0\\blazored.localstorage.4.3.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.1\\microsoft.aspnetcore.authorization.7.0.1.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.1\\microsoft.aspnetcore.components.7.0.1.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.1\\microsoft.aspnetcore.components.analyzers.7.0.1.nupkg.sha512",
@@ -32,7 +33,7 @@
     "C:\\Users\\am954\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\am954\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.1\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.1.nupkg.sha512"
+    "C:\\Users\\am954\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.2\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }
