@@ -13,17 +13,17 @@ The main objectives of this project are:
 
 # Progression
 
-On 8 January 2023, the following progress was made on the recipe app:
+Day 1: the following progress was made on the recipe app:
 
 - The "add recipe", "edit recipe", and "list of recipe" pages were implemented and added to the navbar
 
 ![Day 1](https://gcdnb.pbrd.co/images/Oe3jUgIfDL12.png?o=1)
 
-On 9 January 2023, further development was completed on the "add recipe" page, which now includes a form with fields for the name of the recipe, ingredients, and time needed to complete the recipe, as well as an "add recipe" button. A screenshot of this page can be seen below:
+Day 2: further development was completed on the "add recipe" page, which now includes a form with fields for the name of the recipe, ingredients, and time needed to complete the recipe, as well as an "add recipe" button. A screenshot of this page can be seen below:
 
 ![Day 2](https://gcdnb.pbrd.co/images/Aa3bIHECpNRV.png?o=1)
 
-On 14 January 2023, the data is now stored in the LocalStorage. When submitting the recipe, the data is stored in an array.
+Day 3: the data is now stored in the LocalStorage. When submitting the recipe, the data is stored in an array.
 So when we refresh the page, the data will be visible. The data are no longer volatile.
 
 ![Day 3](https://i.ibb.co/J2SjzKz/2023-02-05-22-35-36-List-of-Recipes.png)
