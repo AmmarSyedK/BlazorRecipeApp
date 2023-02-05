@@ -14,14 +14,12 @@
         "outputPath": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\am954\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\am954\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +41,18 @@
             "Blazored.LocalStorage": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Blazored.Modal": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Blazorise.Icons.Material": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Blazorise.Material": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",

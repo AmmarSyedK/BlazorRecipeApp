@@ -6,16 +6,6 @@
 <div class="row">
     <div class="col-4">
         <form action="row row-cold-lg-auto g_3 align-items-center">
-
-
-            <u1 class="list-group mb-5">
-                @foreach (var recipe in recipes)
-                {
-                    <p>@recipe.Name</p>
-                    <p>@recipe.Ingredients</p>
-                    <p>@recipe.Duration</p>
-                }
-            </u1>
             
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Recipe name</label>
@@ -49,51 +39,54 @@
 </div>
 
 @code {
-    private int recipeDuration;
-    private string recipeTitle;
-    private string recipeIngredients;
-    private void DecreaseDuration(){
-        recipeDuration = Math.Max(recipeDuration - 15, 0);
+private string recipeTitle; // Title of the recipe 
+private string recipeIngredients; // Ingredients of the recipe
+private int recipeDuration; // Duration of the recipe
+
+// Methods DecreaseDuration and IncreaseDuration
+// to dynamically increase and decrease the duration
+// With two buttons + and -
+private void DecreaseDuration(){
+    recipeDuration = Math.Max(recipeDuration - 15, 0);
+}
+private void IncreaseDuration(){
+    recipeDuration += 15;
+}
+
+// List recipes to store all the recipes
+private List<RecipeItem> recipes = new List<RecipeItem>();
+private const string localStorageKey = "recipeapp";
+
+// Method OnInitializedAsync 
+protected override async Task OnInitializedAsync(){
+    var data = await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
+
+    if (data != null){
+        recipes = data;
     }
-    private void IncreaseDuration(){
-        recipeDuration += 15;
-    }
-    private List<RecipeItem> recipes = new();
-    private async Task AddRecipeAsync()
+}
+
+// Method AddRecipeAsync to add a recipe
+private async Task AddRecipeAsync()
+{
+    if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients))
     {
-        if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients))
+        recipes.Add(new RecipeItem
         {
-            recipes.Add(new RecipeItem
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = recipeTitle,
-                Ingredients = recipeIngredients,
-                Duration = recipeDuration
-            });
+            Id = Guid.NewGuid().ToString(),
+            Name = recipeTitle,
+            Ingredients = recipeIngredients,
+            Duration = recipeDuration
+        });
 
-            await SaveRecipeAsync();
-
-            
-        }
+        await SaveRecipeAsync();            
     }
-    protected override async Task OnInitializedAsync(){
-        var data = await GetRecipeAsync();
+}
 
-        if (data != null){
-            recipes = data;
-        }
-    }
-    
-    private const string localStorageKey = "recipeapp";
-    private async Task SaveRecipeAsync(){
-        await localStorage.SetItemAsync(localStorageKey, recipes);
-    }
-
-    public List<RecipeItem> RecipeItems { get; set; } = new List<RecipeItem>();
-
-    public static async Task <List<RecipeItem>> GetRecipeAsync(){
-        return await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
-    }
+// Method SaveRecipeAsync to store the recipes into the SQL database
+private async Task SaveRecipeAsync(){
+    await localStorage.SetItemAsync(localStorageKey, recipes);
+}
 
 }
 

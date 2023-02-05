@@ -25,3 +25,10 @@ On 9 January 2023, further development was completed on the "add recipe" page, w
 
 On 14 January 2023, the data is now stored in the LocalStorage. When submitting the recipe, the data is stored in an array.
 So when we refresh the page, the data will be visible. The data are no longer volatile.
+
+![Day 3](https://i.ibb.co/J2SjzKz/2023-02-05-22-35-36-List-of-Recipes.png)
+
+Day 4: the recipes can be now displayed  in the "Add Recipe" navbar. It can also be edited and deleted dynamically thanks to the methods DeleteRecipeAsync.
+
+![Day 4](https://i.ibb.co/F8PG9sC/2023-02-05-22-33-48-List-of-Recipes.png)
+

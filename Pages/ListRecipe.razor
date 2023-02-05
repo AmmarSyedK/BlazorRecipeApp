@@ -1,32 +1,76 @@
 ﻿@page "/list-recipe"
-
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <PageTitle>List of Recipes</PageTitle>
 
 <h1>List of Recipes </h1>
 
-<u1 class="list-group mb-5">
-                @foreach (var recipe in recipes)
-                {
-                    <p>@recipe.Name</p>
-                    <p>@recipe.Ingredients</p>
-                    <p>@recipe.Duration</p>
-                }
-            </u1>
+<div class="list-group">
+
+    @foreach (var recipe in recipes)
+    {
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+            
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@recipe.Name</h5>
+                <small>@recipe.Duration minutes</small>
+                </div>
+                <p class="mb-1">@recipe.Ingredients</p>
+            <button class="btn btn-sm btn-primary" @onclick="() => selectedRecipe = recipe">Edit recipe</button> 
+            
+        </a>
+    }
+    
+</div>
+
+<form>
+    @if (selectedRecipe != null){
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Recipe Name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Ingredients</label>
+              <textarea class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Ingredients"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Duration</label>
+              <input type="number" class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Duration">
+            </div>
+            <button class="btn btn-sm btn-success" @onclick="SaveRecipeAsync" @onclick:preventDefault>Save recipe</button>  <button class="btn btn-sm btn-danger" @onclick="DeleteRecipeAsync" >Delete recipe</button>
+
+    }
+</form> 
+
 
 @code {
-    private List<RecipeItem> recipes = new();
-    public List<RecipeItem> RecipeItems { get; set; } = new List<RecipeItem>();
 
-    protected override async Task OnInitializedAsync(){
-        var data = await GetRecipeAsync();
+public List<RecipeItem> recipes = new(); // recipes list
 
-        if (data != null){
-            recipes = data;
-        }
+private RecipeItem selectedRecipe;
+
+private const string localStorageKey = "recipeapp"; // local storage key
+public List<RecipeItem> RecipeItems { get; set; } = new List<RecipeItem>(); // RecipeItems list
+protected override async Task OnInitializedAsync(){
+    recipes = await GetRecipeAsync();
+}
+// GetRecipeAsync method to sync the recipes dynamically
+private async Task <List<RecipeItem>> GetRecipeAsync(){
+    return await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey) ?? new List<RecipeItem>();
+}    
+
+// method DeleteRecipe to delete recipes
+private async Task DeleteRecipeAsync(){
+    if(selectedRecipe != null){
+        recipes.Remove(selectedRecipe);
+       await SaveRecipeAsync();
     }
+}
 
-    
-    
-        
+// Method SaveRecipeAsync to store the recipes into the SQL database
+private async Task SaveRecipeAsync(){
+    await localStorage.SetItemAsync(localStorageKey, recipes);
+}
+
 }
