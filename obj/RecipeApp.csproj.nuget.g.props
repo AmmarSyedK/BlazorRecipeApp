@@ -18,6 +18,7 @@
     <Import Project="$(NuGetPackageRoot)blazorise.bootstrap\1.2.0\buildTransitive\Blazorise.Bootstrap.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap\1.2.0\buildTransitive\Blazorise.Bootstrap.props')" />
     <Import Project="$(NuGetPackageRoot)blazorise.material\1.2.0\buildTransitive\Blazorise.Material.props" Condition="Exists('$(NuGetPackageRoot)blazorise.material\1.2.0\buildTransitive\Blazorise.Material.props')" />
     <Import Project="$(NuGetPackageRoot)blazorise.icons.material\1.2.0\buildTransitive\Blazorise.Icons.Material.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.material\1.2.0\buildTransitive\Blazorise.Icons.Material.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.bootstrap5\1.2.0\buildTransitive\Blazorise.Bootstrap5.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap5\1.2.0\buildTransitive\Blazorise.Bootstrap5.props')" />
     <Import Project="$(NuGetPackageRoot)blazored.modal\7.1.0\buildTransitive\Blazored.Modal.props" Condition="Exists('$(NuGetPackageRoot)blazored.modal\7.1.0\buildTransitive\Blazored.Modal.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">

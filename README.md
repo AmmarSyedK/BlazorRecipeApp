@@ -32,3 +32,6 @@ Day 4: the recipes can be now displayed  in the "Add Recipe" navbar. It can also
 
 ![Day 4](https://i.ibb.co/F8PG9sC/2023-02-05-22-33-48-List-of-Recipes.png)
 
+Day 5: The design of the app has been reworked. The library Blazorise has been used to get a better design of the app with more functionnality. Here is the result: 
+
+![Day 5](https://i.ibb.co/Yt9pMD4/2023-02-07-22-14-10-Window.png)

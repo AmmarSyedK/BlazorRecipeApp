@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using RecipeApp;
 using Blazored.LocalStorage;
 using Blazorise;
-using Blazorise.Material;
-using Blazorise.Icons.Material;
+using Blazorise.Bootstrap5;
+using Blazorise.Icons.FontAwesome;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -16,7 +16,7 @@ builder.Services
     {
         options.Immediate = true;
     } )
-    .AddMaterialProviders()
-    .AddMaterialIcons();
+    .AddBootstrap5Providers()
+    .AddFontAwesomeIcons();
 
 await builder.Build().RunAsync();

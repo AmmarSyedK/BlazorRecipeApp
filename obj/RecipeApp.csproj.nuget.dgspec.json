@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[7.1.0, )"
             },
+            "Blazorise.Bootstrap5": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Blazorise.Icons.FontAwesome": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Blazorise.Icons.Material": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -79,12 +87,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[7.0.2, 7.0.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

@@ -11,14 +11,24 @@
                 <label for="exampleFormControlInput1" class="form-label">Recipe name</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lasagna" @bind="recipeTitle">
             </div>
+            
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Link image of the recipe</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: https://imagesvc.io/F3748642.jpg" @bind="recipeImage"> <CardImage Source=@recipeImage Alt="Recipe Image"></CardImage>
+            </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeIngredients"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Ingredients</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Tomatoes, 2. Beef, ..." @bind="recipeIngredients"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Instructions</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeInstructions"></textarea>
             </div>
         
             <div class="form-group">
-              <label for="durationInput">Duration (minutes):</label>
+              <label for="durationInput">Duration of the recipe (minutes):</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <button type="button" class="btn btn-primary" @onclick="DecreaseDuration">-</button>
@@ -33,60 +43,80 @@
             <div class="mb-3">
                 <button class="btn btn-primary" type="submit" @onclick="AddRecipeAsync" @onclick:preventDefault>Add the recipe</button>
             </div>
-            
+
         </form>
     </div>
 </div>
 
+<Alert @ref="myAlert" Color="Color.Info">
+    <Heading Size="HeadingSize.Is4" TextColor="TextColor.Success">
+        Recipe succesfully added!
+        <CloseButton />
+    </Heading>
+    <Paragraph>
+        One recipe added to your list! You can now view it whenever you need.
+    </Paragraph>
+    <Paragraph>
+        <Button Color="Color.Info">View list of recipes</Button>
+    </Paragraph>
+</Alert>
+
 @code {
-private string recipeTitle; // Title of the recipe 
-private string recipeIngredients; // Ingredients of the recipe
-private int recipeDuration; // Duration of the recipe
+    private string recipeTitle; // Title of the recipe 
+    private string recipeIngredients; // Ingredients of the recipe
+    private string recipeInstructions; // Instructions of the recipe
+    private string recipeImage; // Image link of the recipe
+    private int recipeDuration; // Duration of the recipe
+    bool visible = true;
+    Alert myAlert;
 
-// Methods DecreaseDuration and IncreaseDuration
-// to dynamically increase and decrease the duration
-// With two buttons + and -
-private void DecreaseDuration(){
-    recipeDuration = Math.Max(recipeDuration - 15, 0);
-}
-private void IncreaseDuration(){
-    recipeDuration += 15;
-}
-
-// List recipes to store all the recipes
-private List<RecipeItem> recipes = new List<RecipeItem>();
-private const string localStorageKey = "recipeapp";
-
-// Method OnInitializedAsync 
-protected override async Task OnInitializedAsync(){
-    var data = await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
-
-    if (data != null){
-        recipes = data;
+    // Methods DecreaseDuration and IncreaseDuration
+    // to dynamically increase and decrease the duration
+    // With two buttons + and -
+    private void DecreaseDuration(){
+        recipeDuration = Math.Max(recipeDuration - 15, 0);
     }
-}
+    private void IncreaseDuration(){
+        recipeDuration += 15;
+    }
 
-// Method AddRecipeAsync to add a recipe
-private async Task AddRecipeAsync()
-{
-    if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients))
+    // List recipes to store all the recipes
+    private List<RecipeItem> recipes = new List<RecipeItem>();
+    private const string localStorageKey = "recipeapp";
+
+    // Method OnInitializedAsync 
+    protected override async Task OnInitializedAsync(){
+        var data = await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
+
+        if (data != null){
+            recipes = data;
+        }
+    }
+
+    // Method AddRecipeAsync to add a recipe
+    private async Task AddRecipeAsync()
     {
-        recipes.Add(new RecipeItem
+        await myAlert.Show();
+        if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients))
         {
-            Id = Guid.NewGuid().ToString(),
-            Name = recipeTitle,
-            Ingredients = recipeIngredients,
-            Duration = recipeDuration
-        });
+            recipes.Add(new RecipeItem
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = recipeTitle,
+                Ingredients = recipeIngredients,
+                Instructions = recipeInstructions,
+                Duration = recipeDuration,
+                Image = recipeImage
+            });
 
-        await SaveRecipeAsync();            
+            await SaveRecipeAsync();
+
+        }
     }
-}
 
-// Method SaveRecipeAsync to store the recipes into the SQL database
-private async Task SaveRecipeAsync(){
-    await localStorage.SetItemAsync(localStorageKey, recipes);
-}
+    // Method SaveRecipeAsync to store the recipes into the SQL database
+    private async Task SaveRecipeAsync(){
+        await localStorage.SetItemAsync(localStorageKey, recipes);
+    }
 
 }
-

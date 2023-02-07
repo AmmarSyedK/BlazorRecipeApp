@@ -11,6 +11,8 @@
       "Blazored.Modal.dll": "sha256-Sr30UiM7JErBe8hojY6HAgaOOgfQE5zHijI0uVypmkM=",
       "Blazorise.dll": "sha256-z9xwbGXW4pNOrIgsZC7nCK\/27WNZFCuznWkdL6iU\/4M=",
       "Blazorise.Bootstrap.dll": "sha256-ynW9OaF8QcD9Fwtm7DpFOGLyELUM9ywM2LonR13qgDE=",
+      "Blazorise.Bootstrap5.dll": "sha256-jZEHIVIJcrmrSaFVClMXTD\/sCbMS\/fiQ9v5pjdiZuiM=",
+      "Blazorise.Icons.FontAwesome.dll": "sha256-gSDrZ9CY7ISXAAiGL60MT46N7RVBQTcDXHTIdmTuKlA=",
       "Blazorise.Icons.Material.dll": "sha256-bqO5wkAGPAOPoy4MoEXzQk3FsMc3mdBc\/vKSW2LUlMA=",
       "Blazorise.Licensing.dll": "sha256-HCvMfGG13thv3GWvUEN2Ca7avc0Bjw5kpc9h9Kk+LS0=",
       "Blazorise.Material.dll": "sha256-U2xoYU0qGk7SG+jJF49bcE4ETCfZ+rwZWdmhIU\/blSg=",
@@ -205,16 +207,16 @@
       "mscorlib.dll": "sha256-T52Qf1cS\/UysEoWOoE2ptEJEXfGpanQX5KNLyDiLv1E=",
       "netstandard.dll": "sha256-p32h5P3QmHJ\/FGoeE6m7f5g\/8ng2PSPGZktHyMadvIs=",
       "System.Private.CoreLib.dll": "sha256-6MwQcyKbqBsoZYOcD9fQJ4iKcn1qMmWRWVEkU2LLCb0=",
-      "RecipeApp.dll": "sha256-msiqPUb3AaBC8XmeB6cjYUVZa9a0uyjsCfGrQMfz3to="
+      "RecipeApp.dll": "sha256-pEuAiAwtKc6UaZW6WlfmL0NqioG8U+IHGP9E95g9t0c="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "RecipeApp.pdb": "sha256-5+daEkrGojvThJBdqn6bVJdmvYa18EIPWrTYXwVi2f0="
+      "RecipeApp.pdb": "sha256-0cSZ0iTm5Cs1UK0272B9X3fX0Cp6vMMYKtFojyJThzY="
     },
     "runtime": {
-      "dotnet.7.0.2.840cn3a9vs.js": "sha256-4mh03qTse0uNR+dQ6ydExm4jJXph0RE8zGNCtF0jiNA=",
+      "dotnet.7.0.2.tt5z2s8frk.js": "sha256-4mh03qTse0uNR+dQ6ydExm4jJXph0RE8zGNCtF0jiNA=",
       "dotnet.timezones.blat": "sha256-ics+RIevvtH3z9plMxv4\/GSMK9+LKYd9sy3FRRI5qTI=",
       "dotnet.wasm": "sha256-U4Yv0mEAN9gesUDNM9s6uB3RdekdPqtggt1OsytNIQM=",
       "icudt.dat": "sha256-DXO3tJHXDOV4qgW\/w8ooggAgZdAVpa5ZllYYAQWpYIk=",

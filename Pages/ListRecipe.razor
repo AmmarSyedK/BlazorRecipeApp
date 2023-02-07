@@ -6,49 +6,86 @@
 <h1>List of Recipes </h1>
 
 <div class="list-group">
-
+    <CardDeck>
     @foreach (var recipe in recipes)
     {
-        <a class="list-group-item list-group-item-action flex-column align-items-start">
-            
-                <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">@recipe.Name</h5>
-                <small>@recipe.Duration minutes</small>
-                </div>
-                <p class="mb-1">@recipe.Ingredients</p>
-            <button class="btn btn-sm btn-primary" @onclick="() => selectedRecipe = recipe">Edit recipe</button> 
-            
-        </a>
-    }
+        <Card>
+            <CardImage Source=@recipe.Image Alt="Card image cap 3"></CardImage>
+            <CardBody>
+                <CardTitle Size="5">@recipe.Name - @recipe.Duration minutes</CardTitle>
+                <Divider /> 
+                <CardText TextOverflow.Truncate >
+                    <Paragraph>
+                    @recipe.Instructions
+                    </Paragraph>
+                </CardText>
+                <Divider />
+                <Button Color="Color.Info">Info</Button> <Button Color="Color.Success" Clicked="@(() => { selectedRecipe = recipe; ShowModal(); })">Edit Recipe</Button>
+            </CardBody>
+        </Card>
+    } 
+    </CardDeck>
     
 </div>
+        <Modal @ref="modalRef">
+    <ModalContent Centered>
+        <ModalHeader>
+            <ModalTitle>Edit Recipe</ModalTitle>
+            <CloseButton />
+        </ModalHeader>
+        <ModalBody>
+            <Field>
+                <FieldLabel>Recipe Name</FieldLabel>
+                <FieldBody>
+                    <TextEdit @bind-Text="@selectedRecipe.Name" Placeholder="@selectedRecipe.Name" />
+                </FieldBody> 
+            </Field>
+            <Field>
+                <FieldLabel>Image recipe Link</FieldLabel>
+                <FieldBody>
+                    <TextEdit @bind-Text="@selectedRecipe.Image" Placeholder="@selectedRecipe.Image" />
+                </FieldBody> 
+            </Field>
+            <Field>
+                <FieldLabel>Ingredients</FieldLabel>
+                <TextEdit @bind-Text="@selectedRecipe.Ingredients" Placeholder="@selectedRecipe.Ingredients" />
+            </Field>
+            <Field>
+                <FieldLabel>Instructions</FieldLabel>
+                <TextEdit @bind-Text="@selectedRecipe.Instructions" Placeholder="@selectedRecipe.Instructions" />
+            </Field>
+            <Field>
+                <FieldLabel>Duration</FieldLabel>
+                <NumericEdit @bind-Value="@selectedRecipe.Duration" Step="15" />
+            </Field>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Danger" Clicked="@DeleteRecipeAsync">Delete recipe</Button>
+            <Button Color="Color.Success" Clicked="@HideModalSave" Type="ButtonType.Submit" PreventDefaultOnSubmit>Save Changes</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
 
-<form>
-    @if (selectedRecipe != null){
 
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Recipe Name</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Name">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Ingredients</label>
-              <textarea class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Ingredients"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Duration</label>
-              <input type="number" class="form-control" id="exampleInputPassword1" @bind="selectedRecipe.Duration">
-            </div>
-            <button class="btn btn-sm btn-success" @onclick="SaveRecipeAsync" @onclick:preventDefault>Save recipe</button>  <button class="btn btn-sm btn-danger" @onclick="DeleteRecipeAsync" >Delete recipe</button>
-
-    }
-</form> 
 
 
 @code {
-
+private Modal modalRef;
+private Task ShowModal()
+{
+    return modalRef.Show();
+}
+private Task HideModal()
+{
+    return modalRef.Hide();
+}
+private async Task HideModalSave(){
+    await SaveRecipeAsync();
+    await HideModal();
+}
 public List<RecipeItem> recipes = new(); // recipes list
 
-private RecipeItem selectedRecipe;
+private RecipeItem selectedRecipe = new();
 
 private const string localStorageKey = "recipeapp"; // local storage key
 public List<RecipeItem> RecipeItems { get; set; } = new List<RecipeItem>(); // RecipeItems list
@@ -66,10 +103,13 @@ private async Task DeleteRecipeAsync(){
         recipes.Remove(selectedRecipe);
        await SaveRecipeAsync();
     }
+    await HideModal();
 }
 
 // Method SaveRecipeAsync to store the recipes into the SQL database
 private async Task SaveRecipeAsync(){
+    Console.WriteLine(selectedRecipe.Duration);
+    Console.WriteLine(selectedRecipe.Name);
     await localStorage.SetItemAsync(localStorageKey, recipes);
 }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tntB6m9ywc8FIp4EMoNL8aVItQDzLwb+N+F0RSQblic+wK9x5C6Q+XMswEDpqNEtAPzIXMdiaU6zrIOzMwrw2Q==",
+  "dgSpecHash": "nmNxgyyoIHRUQmlbu+kNJU+radSxFCfCRkGg6iFVFFTWQVF/Yhb1u42z08jmA+RdxJGuB+Sk2gxn+wFjEciG9Q==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\RecipeApp.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\am954\\.nuget\\packages\\blazored.modal\\7.1.0\\blazored.modal.7.1.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\blazorise\\1.2.0\\blazorise.1.2.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\blazorise.bootstrap\\1.2.0\\blazorise.bootstrap.1.2.0.nupkg.sha512",
+    "C:\\Users\\am954\\.nuget\\packages\\blazorise.bootstrap5\\1.2.0\\blazorise.bootstrap5.1.2.0.nupkg.sha512",
+    "C:\\Users\\am954\\.nuget\\packages\\blazorise.icons.fontawesome\\1.2.0\\blazorise.icons.fontawesome.1.2.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\blazorise.icons.material\\1.2.0\\blazorise.icons.material.1.2.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\blazorise.licensing\\1.1.0\\blazorise.licensing.1.1.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\blazorise.material\\1.2.0\\blazorise.material.1.2.0.nupkg.sha512",
@@ -38,8 +40,7 @@
     "C:\\Users\\am954\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",
     "C:\\Users\\am954\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\am954\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\am954\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.2\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.2.nupkg.sha512"
+    "C:\\Users\\am954\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -8,6 +8,8 @@ namespace RecipeApp.Entity
         public string Id { get => id; set => id = value; }
         private string name;
         public string Name { get => name; set => name = value; }
+        private string image;
+        public string Image { get => image; set => image = value; }
         private string ingredients;
         public string Ingredients { get => ingredients; set => ingredients = value; }
         private string instructions;
