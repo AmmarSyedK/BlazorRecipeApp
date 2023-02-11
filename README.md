@@ -35,3 +35,12 @@ Day 4: the recipes can be now displayed  in the "Add Recipe" navbar. It can also
 Day 5: The design of the app has been reworked. The library Blazorise has been used to get a better design of the app with more functionnality. Here is the result: 
 
 ![Day 5](https://i.ibb.co/Yt9pMD4/2023-02-07-22-14-10-Window.png)
+
+Day 6: 
+- A REST API has been built using Node JS and Express.
+- The information in the API can be used to display recipe images, ingredient lists, and preparation instructions, etc - API Github link [here](https://github.com/AmmarSyedK/RecipeAPI)
+- The API has been deployed using Vercel - Link [here](https://recipe-api-five.vercel.app/recipes)
+- Trying now to GET the data from this API and display all the recipes 
+
+![Day 6](https://i.ibb.co/3zXC8T9/image.png)
+

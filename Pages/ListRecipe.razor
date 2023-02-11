@@ -1,9 +1,9 @@
 ﻿@page "/list-recipe"
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
-<PageTitle>List of Recipes</PageTitle>
+<PageTitle>My Recipes</PageTitle>
 
-<h1>List of Recipes </h1>
+<h1>My Recipes</h1>
 
 <div class="list-group">
     <CardDeck>
@@ -11,17 +11,20 @@
     {
         <Card>
             <CardImage Source=@recipe.Image Alt="Card image cap 3"></CardImage>
-            <CardBody>
+            <CardBody class="card-body">
                 <CardTitle Size="5">@recipe.Name - @recipe.Duration minutes</CardTitle>
                 <Divider /> 
-                <CardText TextOverflow.Truncate >
+                <CardText >
                     <Paragraph>
-                    @recipe.Instructions
+                    @(recipe.Instructions.Length > 400 ? recipe.Instructions.Substring(0, 400) + "..." : recipe.Instructions)
                     </Paragraph>
                 </CardText>
                 <Divider />
-                <Button Color="Color.Info">Info</Button> <Button Color="Color.Success" Clicked="@(() => { selectedRecipe = recipe; ShowModal(); })">Edit Recipe</Button>
+                <div>
+                <Button Color="Color.Info" Clicked="@(() => { selectedRecipe = recipe; ShowModal2(); })">View more</Button> <Button Color="Color.Success" Clicked="@(() => { selectedRecipe = recipe; ShowModal(); })">Edit Recipe</Button>
+                </div>
             </CardBody>
+            
         </Card>
     } 
     </CardDeck>
@@ -66,18 +69,63 @@
     </ModalContent>
 </Modal>
 
+<Modal @ref="modalRef2">
+    <ModalContent Size="ModalSize.Large" Centered>
+        <ModalHeader>
+            <ModalTitle>Closing modal</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+            <CardImage Source=@selectedRecipe.Image Alt="Card image cap 3"></CardImage>
+            <br /><br />
+            <b>Recipe name:</b> @selectedRecipe.Name <br /> <br />
+            <b>Ingredients needed:</b>     
+            @if  (!string.IsNullOrEmpty(selectedRecipe.Ingredients)){ 
+                var ListIngredients = selectedRecipe.Ingredients.Split(',');
+                <ul>
+                @foreach (string ingredient in ListIngredients)
+                {
+                    <li>@ingredient</li>
+                }
+                </ul>
+            }
+            <b>Instructions:</b> 
+            @if  (!string.IsNullOrEmpty(selectedRecipe.Instructions)){ 
+                var ListInstructions = selectedRecipe.Instructions.Split(',');
+                <ul>
+                @foreach (string instruction in ListInstructions)
+                {
+                    <li>@instruction</li>
+                }
+                </ul>
+            }
+            <b>Duration:</b> @selectedRecipe.Duration minutes 
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModal2">Close</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
 
 
 
 @code {
 private Modal modalRef;
+private Modal modalRef2;
 private Task ShowModal()
 {
     return modalRef.Show();
 }
+private Task ShowModal2()
+{
+    return modalRef2.Show();
+}
 private Task HideModal()
 {
     return modalRef.Hide();
+}
+private Task HideModal2()
+{
+    return modalRef2.Hide();
 }
 private async Task HideModalSave(){
     await SaveRecipeAsync();

@@ -1,21 +1,36 @@
-﻿<Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
+﻿<div class="app">
+<Tabs RenderMode="TabsRenderMode.LazyReload" FullWidth="true" Center="true" SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
+    
     <Items>
-        <Tab Name="home">Home</Tab>
-        <Tab Name="listrecipe">List of Recipes</Tab>
-        <Tab Name="addrecipe">Add Recipe</Tab>
+        <Tab Name="home">🏠 Home</Tab>
+        <Tab Name="listrecipe">🍲 My Recipes</Tab>
+        <Tab Name="addrecipe">➕ Add a Recipe</Tab>
     </Items>
     <Content>
+        <div class="pages">
+        <div class="tab1">
         <TabPanel Name="home">
             <RecipeApp.Pages.Index/>
         </TabPanel>
+        </div>
+
+        <div class="tab2">
         <TabPanel Name="listrecipe">
             <RecipeApp.Pages.ListRecipe />
-        </TabPanel>
+        </TabPanel>            
+        </div>
+
+        <div class="tab3">
         <TabPanel Name="addrecipe">
             <RecipeApp.Pages.Add_Recipe />
         </TabPanel>
+        </div>
+
+        </div>
     </Content>
 </Tabs>
+</div>
+
 
 @code {
     string selectedTab = "home";

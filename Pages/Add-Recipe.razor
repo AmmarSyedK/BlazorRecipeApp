@@ -2,33 +2,33 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <h1>Add Recipe</h1>
-
+<br/>
 <div class="row">
-    <div class="col-4">
+    <div class="col-14">
         <form action="row row-cold-lg-auto g_3 align-items-center">
             
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Recipe name</label>
+                <label for="exampleFormControlInput1" class="form-label">🇦 Recipe name</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lasagna" @bind="recipeTitle">
             </div>
             
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Link image of the recipe</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: https://imagesvc.io/F3748642.jpg" @bind="recipeImage"> <CardImage Source=@recipeImage Alt="Recipe Image"></CardImage>
+                <label for="exampleFormControlInput1" class="form-label">🔗 Link image of the recipe</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: https://imagesvc.io/F3748642.jpg" @bind="recipeImage">
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Ingredients</label>
+                <label for="exampleFormControlTextarea1" class="form-label">🥬 Ingredients</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Tomatoes, 2. Beef, ..." @bind="recipeIngredients"></textarea>
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Instructions</label>
+                <label for="exampleFormControlTextarea1" class="form-label">🥕 Instructions</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeInstructions"></textarea>
             </div>
         
             <div class="form-group">
-              <label for="durationInput">Duration of the recipe (minutes):</label>
+              <label for="durationInput">⌚ Duration of the recipe (minutes):</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <button type="button" class="btn btn-primary" @onclick="DecreaseDuration">-</button>

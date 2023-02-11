@@ -1,7 +1,36 @@
-﻿@page "/"
+﻿@* @page "/"
 
-<PageTitle>Index</PageTitle>
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@inject HttpClient Http
 
-<h1>Hello, world!</h1>
+@if (recipes == null)
+{
+<p>No recipes found.</p>
+}
+else
+{
+@foreach (var recipe in recipes)
+{
+<h2>@recipe.Name</h2>
+<ul>
+@foreach (var item in recipe.Ingredients)
+{
+<li>@item</li>
+}
+</ul>
+}
+}
 
-Welcome to your new app.
+<button @onclick="OnInitializedAsync">Haha</button>
+
+@code {
+    private recipeItem[]? recipes;
+    protected override async Task OnInitializedAsync(){
+        recipes = await Http.GetFromJsonAsync<recipeItem[]>("https://recipe-api-five.vercel.app/recipes");
+        Console.WriteLine(recipes);
+    }
+    
+
+} *@

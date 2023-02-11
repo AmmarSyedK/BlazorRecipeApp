@@ -14,7 +14,6 @@ namespace RecipeApp.Entity
         public string Ingredients { get => ingredients; set => ingredients = value; }
         private string instructions;
         public string Instructions { get => instructions; set => instructions = value; }
-
         private int duration;
         public int Duration { get => duration; set => duration = value; }
         private const string localStorageKey = "recipeapp";
@@ -25,6 +24,13 @@ namespace RecipeApp.Entity
             return await localStorage.GetItemAsync<List<RecipeItem>>(localStorageKey);
         } 
     }
+
+    public class recipeItem
+{
+    public string Name { get; set; }
+    public string[] Ingredients { get; set; }
+}
+
 
     
 }

@@ -12,6 +12,12 @@ a, .btn-link {
     color: #0071c1;
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
