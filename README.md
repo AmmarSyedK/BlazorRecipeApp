@@ -44,3 +44,9 @@ Day 6:
 
 ![Day 6](https://i.ibb.co/3zXC8T9/image.png)
 
+Day 7:
+- The data from the API has been successfully called
+- Each item from the API is now displayed in the home menu
+- The next day will be the adding of a Search Bar to dynamically search for recipes
+
+![Day 7](https://i.ibb.co/jZWfC7n/image.png)

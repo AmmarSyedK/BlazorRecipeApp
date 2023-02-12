@@ -19,4 +19,5 @@ builder.Services
     .AddBootstrap5Providers()
     .AddFontAwesomeIcons();
 
+
 await builder.Build().RunAsync();

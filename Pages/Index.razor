@@ -1,36 +1,54 @@
-﻿@* @page "/"
+﻿@page "/"
 
 @using System.Net.Http
 @using System.Net.Http.Json
 @using System.Threading.Tasks
 @inject HttpClient Http
 
-@if (recipes == null)
+<PageTitle>Home</PageTitle>
+
+@if (recipesAPI != null && recipesAPI.Count > 0)
 {
-<p>No recipes found.</p>
-}
-else
-{
-@foreach (var recipe in recipes)
-{
-<h2>@recipe.Name</h2>
-<ul>
-@foreach (var item in recipe.Ingredients)
-{
-<li>@item</li>
-}
-</ul>
-}
+    <CardDeck>
+    @foreach (var recipeAPI in recipesAPI)
+    {  
+        <Card>
+            <CardImage Source=@recipeAPI.imageLink Alt="Card image cap 3"></CardImage>
+            <CardBody class="card-body">
+                <CardTitle Size="5">@recipeAPI.name - @recipeAPI.durationRecipe</CardTitle>
+                <Divider /> 
+                <CardText >
+                    <Paragraph>
+                    @(recipeAPI.instructionsRecipe?.Length > 400 ? recipeAPI.instructionsRecipe.Substring(0, 400) + "..." : recipeAPI.instructionsRecipe)
+                    </Paragraph>
+                </CardText>
+                <Divider />
+
+                <Button Color="Color.Info">More info</Button>
+
+            </CardBody>
+        </Card>
+
+    }    
+    </CardDeck>
+} else {
+    <p><em>Loading...</em></p>
 }
 
-<button @onclick="OnInitializedAsync">Haha</button>
 
-@code {
-    private recipeItem[]? recipes;
-    protected override async Task OnInitializedAsync(){
-        recipes = await Http.GetFromJsonAsync<recipeItem[]>("https://recipe-api-five.vercel.app/recipes");
-        Console.WriteLine(recipes);
+@code{
+    List<RecipeAPI> recipesAPI;
+
+    protected override async Task OnInitializedAsync()
+    {
+        recipesAPI = await Http.GetFromJsonAsync<List<RecipeAPI>>("https://recipe-api-five.vercel.app/recipes");
     }
-    
+    public class RecipeAPI{
+        public string name { get; set; }
+        public string imageLink { get; set; }
+        public string ingredientsRecipe { get; set; }
+        public string instructionsRecipe { get; set; }
+        public string durationRecipe { get; set; }
+    }
+}
 
-} *@
