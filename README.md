@@ -62,3 +62,4 @@ Day 8 - Final project:
 
 Here is a quick video to get a preview of the final project:
 
+https://user-images.githubusercontent.com/76450681/218751239-1fbbbfc0-c808-4a29-be57-29744bd7527b.mp4
