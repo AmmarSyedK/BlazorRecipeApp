@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Blazorise.Components": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Blazorise.Icons.FontAwesome": {
               "target": "Package",
               "version": "[1.2.0, )"

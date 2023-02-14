@@ -1,3 +1,4 @@
+
 ![Blazor Banner](https://www.campusmvp.es/catalogo/repository/product/curso-blazor-online.png?v=0.0.1)
 # Blazor Web Assembly Project - Recipe App
 
@@ -28,11 +29,13 @@ So when we refresh the page, the data will be visible. The data are no longer vo
 
 ![Day 3](https://i.ibb.co/J2SjzKz/2023-02-05-22-35-36-List-of-Recipes.png)
 
-Day 4: the recipes can be now displayed  in the "Add Recipe" navbar. It can also be edited and deleted dynamically thanks to the methods DeleteRecipeAsync.
+Day 4: the recipes can now be displayed in the "Add Recipe" navbar. It can also be edited and deleted dynamically thanks to the method DeleteRecipeAsync.
 
 ![Day 4](https://i.ibb.co/F8PG9sC/2023-02-05-22-33-48-List-of-Recipes.png)
 
-Day 5: The design of the app has been reworked. The library Blazorise has been used to get a better design of the app with more functionnality. Here is the result: 
+Day 5: The design of the app has been reworked. The library Blazorise has been used to get a better design of the app with more functionnality. 
+
+Here is the result: 
 
 ![Day 5](https://i.ibb.co/Yt9pMD4/2023-02-07-22-14-10-Window.png)
 
@@ -50,3 +53,12 @@ Day 7:
 - The next day will be the adding of a Search Bar to dynamically search for recipes
 
 ![Day 7](https://i.ibb.co/jZWfC7n/image.png)
+
+Day 8 - Final project:
+- A search bar has been added
+- The user can now dynamically search for a recipe using the search bar
+- The search text works both in lower case and upper case
+- An error alert has also been added in the "Add a Recipe" tab when a user try to add a recipe filling out all the fields
+
+Here is a quick video to get a preview of the final project:
+

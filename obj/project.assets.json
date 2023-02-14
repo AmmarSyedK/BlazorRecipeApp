@@ -102,6 +102,26 @@
           "buildMultiTargeting/Blazorise.Bootstrap5.props": {}
         }
       },
+      "Blazorise.Components/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.0",
+          "Blazorise.Snackbar": "1.2.0",
+          "Microsoft.AspNetCore.Components": "7.0.2",
+          "Microsoft.AspNetCore.Components.Web": "7.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazorise.Icons.FontAwesome/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -167,6 +187,31 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/Blazorise.Material.props": {}
+        }
+      },
+      "Blazorise.Snackbar/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.0",
+          "Microsoft.AspNetCore.Components": "7.0.2",
+          "Microsoft.AspNetCore.Components.Web": "7.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.Snackbar.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Snackbar.props": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.2": {
@@ -764,6 +809,26 @@
           "buildMultiTargeting/Blazorise.Bootstrap5.props": {}
         }
       },
+      "Blazorise.Components/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.0",
+          "Blazorise.Snackbar": "1.2.0",
+          "Microsoft.AspNetCore.Components": "7.0.2",
+          "Microsoft.AspNetCore.Components.Web": "7.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazorise.Icons.FontAwesome/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -829,6 +894,31 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/Blazorise.Material.props": {}
+        }
+      },
+      "Blazorise.Snackbar/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.0",
+          "Microsoft.AspNetCore.Components": "7.0.2",
+          "Microsoft.AspNetCore.Components.Web": "7.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.Snackbar.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Snackbar.props": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.2": {
@@ -1455,6 +1545,23 @@
         "staticwebassets/tooltip.js"
       ]
     },
+    "Blazorise.Components/1.2.0": {
+      "sha512": "UDK+YAXJcpF3shm088SCIVMXnWiDNLV1rgCoAJzVBhstqFD8cCRKoQa2B9cJ0vlmkagUOnIGnE4Wn1nGJh+ABw==",
+      "type": "package",
+      "path": "blazorise.components/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.components.1.2.0.nupkg.sha512",
+        "blazorise.components.nuspec",
+        "lib/net6.0/Blazorise.Components.dll",
+        "lib/net6.0/Blazorise.Components.xml",
+        "lib/net7.0/Blazorise.Components.dll",
+        "lib/net7.0/Blazorise.Components.xml"
+      ]
+    },
     "Blazorise.Icons.FontAwesome/1.2.0": {
       "sha512": "PFfKaGopvP0RYOs2LVWdvQ8azquHQUHlAjYgsH0j9LFRenKqlPBstDn+dMKW2UvGiVMqq80MgLTcO745SDT7Vw==",
       "type": "package",
@@ -1527,6 +1634,29 @@
         "staticwebassets/blazorise.material.min.css",
         "staticwebassets/modal.js",
         "staticwebassets/tooltip.js"
+      ]
+    },
+    "Blazorise.Snackbar/1.2.0": {
+      "sha512": "Nkco75VW4DGRtqSGu5/Wdo/k/bVlJp2Nod8aZL+lgBN3dbVcvXQAizKitJtMSpZZApDnQa3MEys79VF80d7Yzw==",
+      "type": "package",
+      "path": "blazorise.snackbar/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.snackbar.1.2.0.nupkg.sha512",
+        "blazorise.snackbar.nuspec",
+        "build/Blazorise.Snackbar.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Snackbar.props",
+        "buildTransitive/Blazorise.Snackbar.props",
+        "lib/net6.0/Blazorise.Snackbar.dll",
+        "lib/net6.0/Blazorise.Snackbar.xml",
+        "lib/net7.0/Blazorise.Snackbar.dll",
+        "lib/net7.0/Blazorise.Snackbar.xml",
+        "staticwebassets/blazorise.snackbar.css",
+        "staticwebassets/blazorise.snackbar.min.css"
       ]
     },
     "Microsoft.AspNetCore.Authorization/7.0.2": {
@@ -2406,6 +2536,7 @@
       "Blazored.LocalStorage >= 4.3.0",
       "Blazored.Modal >= 7.1.0",
       "Blazorise.Bootstrap5 >= 1.2.0",
+      "Blazorise.Components >= 1.2.0",
       "Blazorise.Icons.FontAwesome >= 1.2.0",
       "Blazorise.Icons.Material >= 1.2.0",
       "Blazorise.Material >= 1.2.0",
@@ -2460,6 +2591,10 @@
             "version": "[7.1.0, )"
           },
           "Blazorise.Bootstrap5": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "Blazorise.Components": {
             "target": "Package",
             "version": "[1.2.0, )"
           },

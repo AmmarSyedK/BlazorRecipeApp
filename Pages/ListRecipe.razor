@@ -3,11 +3,17 @@
 
 <PageTitle>My Recipes</PageTitle>
 
-<h1>My Recipes</h1>
+<h1>My Recipes</h1> <br><br>
+
+<div class="form-outline col-8">
+  <input type="search" id="form1" class="form-control" placeholder="Search for a recipe" aria-label="Search" @bind="searchString" @bind:event="oninput" />
+</div>
+<br>
+<br>
 
 <div class="list-group">
     <CardDeck>
-    @foreach (var recipe in recipes)
+    @foreach (var recipe in dispRecipes)
     {
         <Card>
             <CardImage Source=@recipe.Image Alt="Card image cap 3"></CardImage>
@@ -21,7 +27,7 @@
                 </CardText>
                 <Divider />
                 <div>
-                <Button Color="Color.Info" Clicked="@(() => { selectedRecipe = recipe; ShowModal2(); })">View more</Button> <Button Color="Color.Success" Clicked="@(() => { selectedRecipe = recipe; ShowModal(); })">Edit Recipe</Button>
+                <Button Color="Color.Info" Clicked="@(() => { selectedRecipe = recipe; ShowModal2(); })">View more</Button> <Button Color="Color.Success" Clicked="@(() => { selectedRecipe = recipe; ShowModal(); })">Edit or Delete Recipe</Button>
                 </div>
             </CardBody>
             
@@ -72,7 +78,7 @@
 <Modal @ref="modalRef2">
     <ModalContent Size="ModalSize.Large" Centered>
         <ModalHeader>
-            <ModalTitle>Closing modal</ModalTitle>
+            <ModalTitle>Recipe Info - @selectedRecipe.Name</ModalTitle>
         </ModalHeader>
         <ModalBody>
             <CardImage Source=@selectedRecipe.Image Alt="Card image cap 3"></CardImage>
@@ -132,6 +138,10 @@ private async Task HideModalSave(){
     await HideModal();
 }
 public List<RecipeItem> recipes = new(); // recipes list
+
+string searchString = string.Empty;
+List<RecipeItem> dispRecipes => recipes.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper())).ToList();
+
 
 private RecipeItem selectedRecipe = new();
 

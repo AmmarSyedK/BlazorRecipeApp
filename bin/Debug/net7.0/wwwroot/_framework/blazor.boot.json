@@ -12,10 +12,12 @@
       "Blazorise.dll": "sha256-z9xwbGXW4pNOrIgsZC7nCK\/27WNZFCuznWkdL6iU\/4M=",
       "Blazorise.Bootstrap.dll": "sha256-ynW9OaF8QcD9Fwtm7DpFOGLyELUM9ywM2LonR13qgDE=",
       "Blazorise.Bootstrap5.dll": "sha256-jZEHIVIJcrmrSaFVClMXTD\/sCbMS\/fiQ9v5pjdiZuiM=",
+      "Blazorise.Components.dll": "sha256-LVD++WOmGRdAKLvdw0X\/glmsHoj0vr\/K+a5eNKMxQuk=",
       "Blazorise.Icons.FontAwesome.dll": "sha256-gSDrZ9CY7ISXAAiGL60MT46N7RVBQTcDXHTIdmTuKlA=",
       "Blazorise.Icons.Material.dll": "sha256-bqO5wkAGPAOPoy4MoEXzQk3FsMc3mdBc\/vKSW2LUlMA=",
       "Blazorise.Licensing.dll": "sha256-HCvMfGG13thv3GWvUEN2Ca7avc0Bjw5kpc9h9Kk+LS0=",
       "Blazorise.Material.dll": "sha256-U2xoYU0qGk7SG+jJF49bcE4ETCfZ+rwZWdmhIU\/blSg=",
+      "Blazorise.Snackbar.dll": "sha256-YRNBkDno5rU7EAQkRGEJp8yFrLO\/iYpU1UEL9QXxGQ8=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-z4GZC8zBP0+3qTsoIBdCEOvwWaWDTpt8U1vr1aLEkI4=",
       "Microsoft.AspNetCore.Components.dll": "sha256-2+8AH28qnJdxAcSZ0HYdiGuZzHwXNI1gFtZz71zMhDc=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-9hS0lH\/KHwdR5UrpgTsTuXn3Q25Lo5YfMdkNS9eU2gk=",
@@ -207,13 +209,13 @@
       "mscorlib.dll": "sha256-T52Qf1cS\/UysEoWOoE2ptEJEXfGpanQX5KNLyDiLv1E=",
       "netstandard.dll": "sha256-p32h5P3QmHJ\/FGoeE6m7f5g\/8ng2PSPGZktHyMadvIs=",
       "System.Private.CoreLib.dll": "sha256-6MwQcyKbqBsoZYOcD9fQJ4iKcn1qMmWRWVEkU2LLCb0=",
-      "RecipeApp.dll": "sha256-6E9MUJ45zE+AuIX\/+GKEeoVlKeYOgHGg+fkFzZf3TfM="
+      "RecipeApp.dll": "sha256-C1gHMiSYyeBPMOFbs+35Qlqfsl1OK+AjVbPr2oeB1PE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "RecipeApp.pdb": "sha256-\/3R8hNOxU1xiFgyrYNhJ+u91qDppxBFrWcwBBX\/Ac\/Q="
+      "RecipeApp.pdb": "sha256-+8qi8QfR+kVAJe162BC278jAvLqoWjsYiCpZJFKzboo="
     },
     "runtime": {
       "dotnet.7.0.2.tt5z2s8frk.js": "sha256-4mh03qTse0uNR+dQ6ydExm4jJXph0RE8zGNCtF0jiNA=",

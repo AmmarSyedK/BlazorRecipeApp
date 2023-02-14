@@ -1,7 +1,8 @@
 using Blazored.LocalStorage;
 
 namespace RecipeApp.Entity
-{
+{   
+    // class for all the items needed for our recipe (name, ingredients, ...)
     public class RecipeItem
     {
         private string id;
@@ -16,6 +17,8 @@ namespace RecipeApp.Entity
         public string Instructions { get => instructions; set => instructions = value; }
         private int duration;
         public int Duration { get => duration; set => duration = value; }
+
+        // storage key to be able to store our recipe in the localStoage using ILocalStorageService
         private const string localStorageKey = "recipeapp";
         private ILocalStorageService localStorage { get; set; }
         

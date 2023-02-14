@@ -862,3 +862,11 @@ D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-g
 D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-gz\qaBnoB+F.gz
 D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-gz\GppXtUyh.gz
 D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-gz\A+dowQ2E.gz
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\wwwroot\_framework\Blazorise.Components.dll
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\wwwroot\_framework\Blazorise.Snackbar.dll
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\wwwroot\_framework\Blazorise.Components.dll.gz
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\wwwroot\_framework\Blazorise.Snackbar.dll.gz
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\Blazorise.Components.dll
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\bin\Debug\net7.0\Blazorise.Snackbar.dll
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-gz\Cq4rDFOH.gz
+D:\Desktop\Cours\Croatie\Recipe App C# Blazor\RecipeApp\obj\Debug\net7.0\build-gz\ev1g9r9n.gz

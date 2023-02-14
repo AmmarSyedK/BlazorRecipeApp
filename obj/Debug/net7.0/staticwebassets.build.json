@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mGvzaS6rsOZGNAD5Kr84fDh1tc4QvBpqfdjSIt6HBxM=",
+  "Hash": "svF4+K0Rq2/82oNjw1ihHa/awjUQrs2jMUIwAuSTXdE=",
   "Source": "RecipeApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -287,6 +287,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.material\\1.2.0\\staticwebassets\\tooltip.js"
+    },
+    {
+      "Identity": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\blazorise.snackbar.css",
+      "SourceId": "Blazorise.Snackbar",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\",
+      "BasePath": "_content/Blazorise.Snackbar",
+      "RelativePath": "blazorise.snackbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\blazorise.snackbar.css"
+    },
+    {
+      "Identity": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\blazorise.snackbar.min.css",
+      "SourceId": "Blazorise.Snackbar",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\",
+      "BasePath": "_content/Blazorise.Snackbar",
+      "RelativePath": "blazorise.snackbar.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\staticwebassets\\blazorise.snackbar.min.css"
     },
     {
       "Identity": "C:\\Users\\am954\\.nuget\\packages\\blazorise\\1.2.0\\staticwebassets\\blazorise.css",
@@ -969,6 +1003,23 @@
       "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.bootstrap5\\1.2.0\\lib\\net7.0\\Blazorise.Bootstrap5.dll"
     },
     {
+      "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Components.dll",
+      "SourceId": "RecipeApp",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazorise.Components.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.components\\1.2.0\\lib\\net7.0\\Blazorise.Components.dll"
+    },
+    {
       "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.dll",
       "SourceId": "RecipeApp",
       "SourceType": "Computed",
@@ -1052,6 +1103,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.material\\1.2.0\\lib\\net7.0\\Blazorise.Material.dll"
+    },
+    {
+      "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Snackbar.dll",
+      "SourceId": "RecipeApp",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazorise.Snackbar.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\am954\\.nuget\\packages\\blazorise.snackbar\\1.2.0\\lib\\net7.0\\Blazorise.Snackbar.dll"
     },
     {
       "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.7.0.2.tt5z2s8frk.js",
@@ -5474,6 +5542,23 @@
       "OriginalItemSpec": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Linq.Queryable.dll"
     },
     {
+      "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\obj\\Debug\\net7.0\\build-gz\\Cq4rDFOH.gz",
+      "SourceId": "RecipeApp",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazorise.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Components.dll"
+    },
+    {
       "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\obj\\Debug\\net7.0\\build-gz\\cshtXhrY.gz",
       "SourceId": "RecipeApp",
       "SourceType": "Computed",
@@ -5523,6 +5608,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Reflection.Extensions.dll"
+    },
+    {
+      "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\obj\\Debug\\net7.0\\build-gz\\ev1g9r9n.gz",
+      "SourceId": "RecipeApp",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazorise.Snackbar.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Snackbar.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazorise.Snackbar.dll"
     },
     {
       "Identity": "D:\\Desktop\\Cours\\Croatie\\Recipe App C# Blazor\\RecipeApp\\obj\\Debug\\net7.0\\build-gz\\evhKdR+M.gz",

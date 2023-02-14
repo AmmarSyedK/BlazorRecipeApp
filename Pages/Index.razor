@@ -7,10 +7,21 @@
 
 <PageTitle>Home</PageTitle>
 
+<h1>Search and explore public recipes</h1><br><br>
+
+@* Recipe Searchbar, the search input searchString will try to match to a recipe name (lower case or upper case) *@
+<div class="form-outline col-8">
+  <input type="search" id="form1" class="form-control" placeholder="Search for recipe" aria-label="Search" @bind="searchString" @bind:event="oninput" />
+</div><br><br>
+
+@* Display all recipes one by one *@
 @if (recipesAPI != null && recipesAPI.Count > 0)
 {
+
+    <div class="index-card">
+    @* Display a card for each recipe *@
     <CardDeck>
-    @foreach (var recipeAPI in recipesAPI)
+    @foreach (var recipeAPI in dispRecipes)
     {  
         <Card>
             <CardImage Source=@recipeAPI.imageLink Alt="Card image cap 3"></CardImage>
@@ -19,30 +30,88 @@
                 <Divider /> 
                 <CardText >
                     <Paragraph>
+                    @* If the instructions text is larger than 400, cut it and add "..." *@
                     @(recipeAPI.instructionsRecipe?.Length > 400 ? recipeAPI.instructionsRecipe.Substring(0, 400) + "..." : recipeAPI.instructionsRecipe)
                     </Paragraph>
                 </CardText>
                 <Divider />
 
-                <Button Color="Color.Info">More info</Button>
+                @* Button More Info to display a modal to get a better view of the recipe details *@
+                <Button Color="Color.Info" Clicked="@(() => { selectedRecipe = recipeAPI; ShowModal2(); })">More info</Button>
 
             </CardBody>
         </Card>
 
     }    
     </CardDeck>
+    </div>   
 } else {
     <p><em>Loading...</em></p>
 }
 
+@* More info modal *@
+<Modal @ref="modalRef2">
+    <ModalContent Size="ModalSize.Large" Centered>
+        <ModalHeader>
+            <ModalTitle>Recipe Info - @selectedRecipe.name</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+            <CardImage Source=@selectedRecipe.imageLink Alt="Card image cap 3"></CardImage>
+            <br /><br />
+            <b>Recipe name:</b> @selectedRecipe.name <br /> <br />
+            <b>Ingredients needed:</b>     
+            @if  (!string.IsNullOrEmpty(selectedRecipe.ingredientsRecipe)){ 
+                var ListIngredients = selectedRecipe.ingredientsRecipe.Split(',');
+                <ul>
+                @foreach (string ingredient in ListIngredients)
+                {
+                    <li>@ingredient</li>
+                }
+                </ul>
+            }
+            <b>Instructions:</b> 
+            <p> @selectedRecipe.instructionsRecipe </p>
+            <b>Duration:</b> @selectedRecipe.durationRecipe 
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModal2">Close</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
 
 @code{
+
+// More info Modal
+    private Modal modalRef2;
+
+    private Task ShowModal2()
+    {
+        return modalRef2.Show();
+    }
+    private Task HideModal2()
+    {
+        return modalRef2.Hide();
+    }      
+
+    // Recipe Items of the data called from the API
     List<RecipeAPI> recipesAPI;
 
+    // new RecipeItem for the selected recipe, used for displaying the info on the modal
+    private RecipeAPI selectedRecipe = new();
+    
+    // searchString initially set as Empty to display all recipes at first
+    string searchString = string.Empty;
+
+    // dispRecipes to display all the recipes where the search string match the recipes name
+    List<RecipeAPI> dispRecipes => recipesAPI.Where(s => s.name.ToUpper().Contains(searchString.ToUpper())).ToList();
+
+    // API call
     protected override async Task OnInitializedAsync()
     {
         recipesAPI = await Http.GetFromJsonAsync<List<RecipeAPI>>("https://recipe-api-five.vercel.app/recipes");
     }
+
+    // def of Recipe Items called from API
     public class RecipeAPI{
         public string name { get; set; }
         public string imageLink { get; set; }

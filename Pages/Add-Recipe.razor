@@ -5,51 +5,66 @@
 
 <h1>Add Recipe</h1>
 <br/>
+
+@* Form to add a recipe *@
 <div class="row">
     <div class="col-14">
         <form action="row row-cold-lg-auto g_3 align-items-center">
             
+            @* Name of the recipe *@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">🇦 Recipe name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lasagna" @bind="recipeTitle">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lasagna" @bind="recipeTitle" required>
             </div>
             
+            @* Link image of the recipe *@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">🔗 Link image of the recipe</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: https://imagesvc.io/F3748642.jpg" @bind="recipeImage">
+                <input required type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: https://imagesvc.io/F3748642.jpg" @bind="recipeImage">
             </div>
 
+            @* Ingredients of the recipe *@
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">🥬 Ingredients</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Tomatoes, 2. Beef, ..." @bind="recipeIngredients"></textarea>
+                <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Tomatoes, 2. Beef, ..." @bind="recipeIngredients"></textarea>
             </div>
 
+            @* Instructions of the recipe *@
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">🥕 Instructions</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeInstructions"></textarea>
+                <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="1. Prepare the Bechamel Sauce..." @bind="recipeInstructions"></textarea>
             </div>
-        
+
+            @* Duration of the recipe with + and - button *@
             <div class="form-group">
               <label for="durationInput">⌚ Duration of the recipe (minutes):</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <button type="button" class="btn btn-primary" @onclick="DecreaseDuration">-</button>
                 </div>
-                <input type="number" class="form-control" min="0" step="15" @bind="recipeDuration" />
+                <input required type="number" class="form-control" min="0" step="15" @bind="recipeDuration" />
                 <div class="input-group-append">
                   <button type="button" class="btn btn-primary" @onclick="IncreaseDuration">+</button>
                 </div>
               </div>
             </div>
-            <div class="form-group mb-4"></div>
+
             <div class="mb-3">
-                <button class="btn btn-primary" type="submit" @onclick="AddRecipeAsync" @onclick:preventDefault>Add the recipe</button>
-            </div>
+                @* Submit button of the form *@
+                <button class="btn btn-primary" type="submit" @onclick="async () => {
+        if(!string.IsNullOrWhiteSpace(recipeTitle) && !string.IsNullOrWhiteSpace(recipeIngredients) && !string.IsNullOrWhiteSpace(recipeInstructions)){
+            await AddRecipeAsync();
+        } else {
+            await InputNotFilled();
+        }
+    }"  @onclick:preventDefault>Add the recipe</button> @* If all the fields have been filled out, then add the recipe and display a success alert *@
+            </div>                                      @* Else display an error alert *@
 
         </form>
     </div>
 </div>
 
+@* Success alert *@
 <Alert @ref="myAlert" Color="Color.Info">
     <Heading Size="HeadingSize.Is4" TextColor="TextColor.Success">
         Recipe succesfully added!
@@ -58,9 +73,19 @@
     <Paragraph>
         One recipe added to your list! You can now view it whenever you need.
     </Paragraph>
+
+</Alert>
+
+@* Error alert *@
+<Alert @ref="errorAlert" Color="Color.Danger">
+    <Heading Size="HeadingSize.Is4" TextColor="TextColor.Danger">
+        Error
+        <CloseButton />
+    </Heading>
     <Paragraph>
-        <Button Color="Color.Info">View list of recipes</Button>
+        Please fill out all the fields.
     </Paragraph>
+
 </Alert>
 
 @code {
@@ -70,7 +95,8 @@
     private string recipeImage; // Image link of the recipe
     private int recipeDuration; // Duration of the recipe
     bool visible = true;
-    Alert myAlert;
+    Alert myAlert; // Success alert
+    Alert errorAlert; // Error alert
 
     // Methods DecreaseDuration and IncreaseDuration
     // to dynamically increase and decrease the duration
@@ -114,6 +140,11 @@
             await SaveRecipeAsync();
 
         }
+    }
+
+    // Launch the error alert
+    private async Task InputNotFilled(){
+        await errorAlert.Show();
     }
 
     // Method SaveRecipeAsync to store the recipes into the SQL database
