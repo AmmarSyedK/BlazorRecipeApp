@@ -4,7 +4,7 @@
 
 This project is a web-based application for creating, editing, and storing recipes. The app is built using Blazor Web Assembly, a framework for building client-side web applications with .NET and C#. With this app, users can easily add new recipes, edit existing ones, and view a list of all their recipes in one convenient location.
 
-# Objectives
+## Objectives
 
 The main objectives of this project are:
 
@@ -12,7 +12,7 @@ The main objectives of this project are:
 2.  To utilize the capabilities of Blazor Web Assembly and C# to build a responsive and interactive app.
 3.  To create a platform for storing and accessing recipes from any device with an internet connection.
 
-# Progression
+## Progression
 
 Day 1: the following progress was made on the recipe app:
 
@@ -63,3 +63,29 @@ Day 8 - Final project:
 Here is a quick video to get a preview of the final project:
 
 https://user-images.githubusercontent.com/76450681/218751239-1fbbbfc0-c808-4a29-be57-29744bd7527b.mp4
+
+## Prerequisites
+
+Before you can run the recipe app, you need to install the following tools:
+
+- [.NET Core SDK](https://dotnet.microsoft.com/en-us/download) - version 3.1 or later
+- [Visual Studio Code](https://code.visualstudio.com/) or any other code editor of your choice.
+Fork and clone this repository locally using Git.
+
+## Installation
+
+1. Clone the GitHub repository:
+```
+git clone https://github.com/your-username/MonProjetBlazor.git
+```
+2. Open the project in Visual Studio Code or your preferred code editor.
+
+3. In the terminal, navigate to the project folder and run the following command to install dependencies:
+```
+dotnet restore
+```
+4. Then, run the following command to start the application:
+```
+dotnet run
+```
+5. Open a web browser and go to the address http://localhost:5000 to access the app.
